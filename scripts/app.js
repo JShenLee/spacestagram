@@ -1,10 +1,11 @@
+//Fetching JSON file from the API link.
 const fetchNasaImages = async () => {
     const res = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=KGxbJr3psbujVh49ZKDhH5aCRWVfXIpwShYa9nDk');
     const data = await res.json();
     console.log(data);
 
 
-
+//Create HTML elements and implement data pulled from JSON file.
     for (var i = 0; i < data.photos.length; i++) {
 
         const body = document.querySelector('body');
@@ -26,6 +27,7 @@ const fetchNasaImages = async () => {
         heartAnimation.classList.add(`heart${i}`);
         heartAnimation.classList.add(`m-fadeOut`);
 
+        //Fontawesome heart icon.
         heartAnimation.innerHTML = `<i class="fas fa-heart"></i>`;
         
 
@@ -60,6 +62,7 @@ function liked() {
     this.classList.toggle('liked');
 }
 
+//'Like' animation that appears for 2 seconds after liking an image. 
 function animation() {
     const heart = document.querySelector(`.heart${this.value}`);
 if(this.classList.contains('liked')){
