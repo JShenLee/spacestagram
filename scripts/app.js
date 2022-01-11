@@ -62,7 +62,7 @@ function liked() {
     this.classList.toggle('liked');
 }
 
-//'Like' animation that appears for 2 seconds after liking an image. 
+//'Like' animation that appears for 2 seconds after liking an image. Toggles classes to interact with CSS which controls visibility.
 function animation() {
     const heart = document.querySelector(`.heart${this.value}`);
 if(this.classList.contains('liked')){
